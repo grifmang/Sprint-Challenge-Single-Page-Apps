@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import CharacterCard from "./CharacterCard";
 
 export default function SearchForm() {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
    
-
   useEffect(() => { 
     axios.get('https://rickandmortyapi.com/api/character/')
       .then(response => {
@@ -32,10 +32,11 @@ export default function SearchForm() {
        onChange={handleChange}
        value={searchTerm} />
      </form>
-     <div>
+     
+     <div className="search-results">
        <ul>
          {searchResults.map(char => (
-           <li key={char.name}>{char.name}</li>
+           <li key={char.name}><CharacterCard name={char.name} img={char.image} gender={char.gender} species={char.species} status={char.status} /></li>
           //  <li key={char.name}>{char}</li>
          ))}
        </ul>

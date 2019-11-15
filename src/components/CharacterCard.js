@@ -9,13 +9,13 @@ import {
 
 export default function CharacterCard(props) {
   return (
-    <Card>
-      <CardImg className='main-img' top width="100%" src={props.img} alt="Rick and Mortycharacter image" />
+    <Card className="grid-view">
+      <CardImg className='main-img' width="100%" src={props.img} alt="Rick and Mortycharacter image" />
       <CardBody>
-        <CardTitle>{props.name}</CardTitle>
-        <CardSubtitle>{props.gender}</CardSubtitle>
-        <CardSubtitle>{props.species}</CardSubtitle>
-        <CardSubtitle>{props.status}</CardSubtitle>
+        <CardTitle>Name: {props.name}</CardTitle>
+        <CardSubtitle>Gender: {props.gender}</CardSubtitle>
+        <CardSubtitle>Species: {props.species}</CardSubtitle>
+        <CardSubtitle>Status: {props.status}</CardSubtitle>
       </CardBody>
     </Card>
   )
